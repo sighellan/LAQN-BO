@@ -1,6 +1,19 @@
 # Generate LAQN-BO problems
 This repo provides files to generate Bayesian optimisation tasks based on LAQN data https://www.londonair.org.uk/
 
+The code is published as part of the paper [Bayesian Optimisation Against Climate Change: Applications and Benchmarks](https://arxiv.org/abs/2306.04343).
+If you found this code useful please cite the paper. 
+```
+@misc{hellan2023bayesian,
+      title={Bayesian Optimisation Against Climate Change: Applications and Benchmarks}, 
+      author={Sigrid Passano Hellan and Christopher G. Lucas and Nigel H. Goddard},
+      year={2023},
+      eprint={2306.04343},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
+
 The code should be run in the following order:
 * `python download_data.py`
 * `python filter_unused_locations.py`
