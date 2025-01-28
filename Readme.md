@@ -15,7 +15,7 @@ If you found this code useful please cite the paper.
 ```
 
 The code should be run in the following order:
-* `python download_data.py`
+* `python -u download_data.py`
 * `python filter_unused_locations.py`
 * `python -u get_loc_data.py`
 * `python -u get_classifications.py`
@@ -23,7 +23,7 @@ The code should be run in the following order:
 * `python generate_laqn_problems.py [year]`
 
 The file `setup_helper.py` contains helper functions and class definitions.
-`station_codes.p` contains a list of station codes which we use to download the data and auxiliary information.
+`station_codes.json` contains a list of station codes which we use to download the data and auxiliary information.
 
 The code was developed using Python 3.7.3. See `requirements.txt` for package requirements.
 

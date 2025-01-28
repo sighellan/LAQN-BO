@@ -1,4 +1,4 @@
-import pickle
+import json
 import urllib.request
 import time
 
@@ -6,7 +6,7 @@ import time
 Get classifications for the stations, and write to file.
 """
 
-codes = pickle.load(open('station_codes.p', 'rb'))
+codes = json.load(open('station_codes.json', 'r'))
 clss_dict = {}
 num_retries = 10
 
