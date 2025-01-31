@@ -3,6 +3,7 @@ import csv
 import os
 import pickle
 import datetime
+import json
 
 """
 Sort the collected data into years.
@@ -30,7 +31,8 @@ for ff in files_poll:
                 all_data.append(row)
             ii += 1
             
-loc_dict = pickle.load(open('lat_lon_dict.p', 'rb'))
+with open('lat_lon_dict.json', 'r') as json_file:
+    loc_dict = json.load(json_file)
 # Interpret dates, values and ratification to allow comparisons 
 data_array = []
 for dd in all_data:

@@ -38,4 +38,6 @@ for code_idx in range(len(codes)):
                 time.sleep(2)
         count += 1
 out_file.close()
-pickle.dump(locations, open('lat_lon_dict.p', 'wb'))
+with open("lat_lon_dict.json", "w") as json_file:
+    json.dump(locations, json_file)
+

@@ -31,4 +31,5 @@ for code_idx in range(len(codes)):
                 time.sleep(2)
         count += 1
     
-pickle.dump(clss_dict, open('classification_dict.p', 'wb'))
+with open("classification_dict.json", "w") as json_file:
+    json.dump(clss_dict, json_file)
