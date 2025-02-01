@@ -1,4 +1,4 @@
-import pickle
+import json
 import urllib.request
 import time
 
@@ -6,7 +6,7 @@ import time
 Get the latitude and longitude coordinates for the stations, and write to file.
 """
 
-codes = pickle.load(open('station_codes.p', 'rb'))
+codes = json.load(open('station_codes.json', 'r'))
 locations = {}
 out_file = open('lat_lon_coords.txt', 'a')
 num_retries = 10
@@ -38,4 +38,6 @@ for code_idx in range(len(codes)):
                 time.sleep(2)
         count += 1
 out_file.close()
-pickle.dump(locations, open('lat_lon_dict.p', 'wb'))
+with open("lat_lon_dict.json", "w") as json_file:
+    json.dump(locations, json_file)
+

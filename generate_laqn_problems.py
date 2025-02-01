@@ -3,6 +3,7 @@ import datetime
 import numpy as np
 import os
 import pickle
+import json
 
 from setup_helper import Problem_obj, convert_lat_lon_km, add_val, get_lat_and_lon_mins
 
@@ -34,9 +35,10 @@ year_normalisation = 2015 # Year to use for normalisation (we want to use traini
 #############################################################
 data = pickle.load(open(
     'data_sorted/%s_year_%s_ratified.p' %(poll, year), 'rb')) # Use the ratified data
-loc_dict = pickle.load(open('lat_lon_dict.p', 'rb'))
-clss_dict = pickle.load(open(
-    'classification_dict.p', 'rb'))
+with open('lat_lon_dict.json', 'r') as json_file:
+    loc_dict = json.load(json_file)
+with open('classification_dict.json', 'r') as json_file:
+    clss_dict = json.load(json_file)
 summ_file = 'data_sorted/%s_year_%s_ratified_summary_statistics.p' %(poll, year_normalisation)
 summ_stats = pickle.load(open(summ_file, 'rb'))
 print('Using file %s for normalisation.' %summ_file)

@@ -1,12 +1,12 @@
 import urllib.request
-import pickle
+import json
 import os
 
 """
 Download raw pollution data from LAQN website. 
 """
 
-codes = pickle.load(open('station_codes.p', 'rb'))
+codes = json.load(open('station_codes.json', 'r'))
 
 start='1-jan-2015'
 end='31-dec-2016'
